@@ -34,14 +34,21 @@ body {
 
 .app {
     background-color: rgba(36, 32, 33, 0.8);
-    border: 5px solid var(--primary);
+    border: 3px solid var(--primary);
+    border-radius: 10px;
     width: 200px;
     height: 300px;
     transition: all linear 0.3s;
+    overflow: hidden;
 }
 
-.app:hover {
-    transform: scale(1.05);
+.app img {
+    transform: scale(1);
+    transition: all linear 0.1s;
+}
+
+.app:hover img {
+    transform: scale(1.1);
 }
 
 a {

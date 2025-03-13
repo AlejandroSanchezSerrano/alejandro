@@ -6,8 +6,7 @@ Passionate Fullstack Developer from Spain.
 - **[LinkedIn](#no)**
 - **[GitHub](https://github.com/AlejandroSanchezSerrano)**
 
-## 📋 Portfolio
-alejandrosanchezserrano.github.io/alejandro
+## 📋 [Portfolio](https://alejandrosanchezserrano.github.io/alejandro)
 
 ## 🛠️ Languages and Tools
 

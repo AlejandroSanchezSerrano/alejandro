@@ -24,69 +24,24 @@ html, body {
 }
 
 header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: var(--terciary);
-    border-bottom: 5px solid var(--primary);
-    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);
-}
-
-header img {
-    width: 25%;
-}
+    border-bottom: 5px solid var(--primary);}
 
 body {
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-    align-items: center;
     background: linear-gradient(to right, rgba(36, 32, 33, 0.5), rgb(36, 32, 33, 0.5)), url('img/bg.png') no-repeat center center fixed;
     background-size: cover;
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    /* flex-wrap: wrap; */
-    align-items: center;
-    max-width: 1200px;
-    width: 100%;
-}
-
-.apps {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .app {
     background-color: rgba(36, 32, 33, 0.8);
     border: 5px solid var(--primary);
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     width: 200px;
     height: 300px;
     transition: all linear 0.3s;
 }
 
-.app a {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
 .app:hover {
     transform: scale(1.05);
-}
-
-a img {
-    width: 100%;
 }
 
 a {
@@ -99,64 +54,21 @@ a:hover {
 }
 
 .card {
-    max-width: 500px;
     color: var(--primary);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     background-color: var(--terciary);
-    border: 5px solid var(--primary);
-    border-radius: 10px;
-    margin: 2rem;
-    padding: 10px 20px 10px 20px;
-    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.75);
+    border: var(--primary);
 }
 
 footer {
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);
-
     font-family: "Arkeo BT W01 Regular";
-    position: fixed;
-    bottom: 0px;
-    margin-right: auto;
-    margin-left: auto;
     background-color: var(--terciary);
     border-top: 5px solid var(--primary);
-    width: 100%;
     color: var(--primary);
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.footer {
-    max-width: 75%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 h3 {
     color: var(--secondary);
-}
-
-.footer__content {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    text-align: start;
-}
-
-.about {
-    max-width: 50%;
-}
-
-.contact {
-    max-width: 100%;
 }
 
 .copy {

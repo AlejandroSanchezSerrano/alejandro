@@ -94,3 +94,35 @@ h3 {
 i {
     color:var(--secondary);
 }
+
+/* Medidas Responsive Dispositivo Movil */
+@media (max-width: 768px) {
+    header img {
+        width: 50% !important;
+    }
+
+    .card {
+        margin: 20px !important;
+        padding: 15px !important;
+        width: 90% !important;
+    }
+
+    section {
+        flex-direction: column !important;
+        gap: 20px !important;
+    }
+
+    section .app {
+        width: 100% !important;
+    }
+
+    .footer__content {
+        flex-direction: column !important;
+        text-align: center !important;
+    }
+
+    .footer__content div {
+        width: 100% !important;
+        margin-bottom: 20px !important;
+    }
+}

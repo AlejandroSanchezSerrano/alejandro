@@ -41,14 +41,51 @@ body {
     flex-direction: column;
     justify-items: center;
     align-items: center;
-    background: linear-gradient(to right, rgba(36, 32, 33, 0.5), rgb(36, 32, 33, 0.5)), url('img/bg.png');
+    background: linear-gradient(to right, rgba(36, 32, 33, 0.5), rgb(36, 32, 33, 0.5)), url('img/bg.png') no-repeat center center fixed;
+    background-size: cover;
 }
 
 main {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: start;
+    /* flex-wrap: wrap; */
+    align-items: center;
     max-width: 1200px;
+    width: 100%;
+}
+
+.apps {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app {
+    background-color: rgba(36, 32, 33, 0.8);
+    border: 5px solid var(--primary);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 300px;
+    transition: all linear 0.3s;
+}
+
+.app a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.app:hover {
+    transform: scale(1.05);
+}
+
+.app img {
     width: 100%;
 }
 

@@ -21,3 +21,12 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         server-dir: ${{ secrets.FTP_SERVER_DIR }}
         local-dir: ./
+
+    - name: Cambiamos los permisos de los archivos a 750
+      uses: appleboy/ssh-action@v0.1.5
+      with:
+        host: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        script: |
+            find ${{ secrets.FTP_SERVER_DIR }} -type f -exec chmod 755 {} \;

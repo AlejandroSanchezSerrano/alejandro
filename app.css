@@ -1,49 +1,76 @@
 @font-face {
     font-family: "Arkeo BT W01 Regular";
     src: url("https://db.onlinewebfonts.com/t/4a402d96e7d7c3ae3e8ee034d2635b27.eot");
-    src: url("https://db.onlinewebfonts.com/t/4a402d96e7d7c3ae3e8ee034d2635b27.eot?#iefix")format("embedded-opentype"),
-    url("https://db.onlinewebfonts.com/t/4a402d96e7d7c3ae3e8ee034d2635b27.woff2")format("woff2"),
-    url("https://db.onlinewebfonts.com/t/4a402d96e7d7c3ae3e8ee034d2635b27.woff")format("woff"),
-    url("https://db.onlinewebfonts.com/t/4a402d96e7d7c3ae3e8ee034d2635b27.ttf")format("truetype"),
-    url("https://db.onlinewebfonts.com/t/4a402d96e7d7c3ae3e8ee034d2635b27.svg#Arkeo BT W01 Regular")format("svg");
-
+    src: url("https://db.onlinewebfonts.com/t/4a402d96e7d7c3ae3e8ee034d2635b27.eot?#iefix")
+        format("embedded-opentype"),
+      url("https://db.onlinewebfonts.com/t/4a402d96e7d7c3ae3e8ee034d2635b27.woff2")
+        format("woff2"),
+      url("https://db.onlinewebfonts.com/t/4a402d96e7d7c3ae3e8ee034d2635b27.woff")
+        format("woff"),
+      url("https://db.onlinewebfonts.com/t/4a402d96e7d7c3ae3e8ee034d2635b27.ttf")
+        format("truetype"),
+      url("https://db.onlinewebfonts.com/t/4a402d96e7d7c3ae3e8ee034d2635b27.svg#Arkeo BT W01 Regular")
+        format("svg");
+  
     /* font-family: "Arkeo BT W01 Regular"; */
-}
-
-:root {
+  }
+  
+  :root {
     --primary: #00fd11;
     --secondary: #0048fc;
     --terciary: #242021;
-}
-
-html, body {
+  }
+  
+  html::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Ocultar barra de desplazamiento en Firefox */
+  html {
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* Oculta la scrollbar en Firefox */
+  }
+  
+  /* Asegurar que el contenido no se vea afectado */
+  html,
+  body {
+    -ms-overflow-style: none; /* Oculta la scrollbar en Internet Explorer 10+ */
+    overflow: auto; /* Permitir desplazamiento en navegadores modernos */
+  }
+  
+  html,
+  body {
     margin: 0;
     padding: 0;
-    box-sizing: box-sizing;
+    box-sizing: border-box;
     font-family: "Arkeo BT W01 Regular";
-}
-
-header {
+  }
+  
+  header {
     background-color: var(--terciary);
     border-bottom: 5px solid var(--primary);
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);
-}
-
-header img {
+  }
+  
+  header img {
     width: 25% !important;
-}
-
-body {
-    background: linear-gradient(to right, rgba(36, 32, 33, 0.5), rgb(36, 32, 33, 0.5)), url('img/bg.png') no-repeat center center fixed;
+  }
+  
+  body {
+    background: linear-gradient(
+        to right,
+        rgba(36, 32, 33, 0.5),
+        rgb(36, 32, 33, 0.5)
+      ),
+      url("img/bg.png") no-repeat center center fixed;
     background-size: cover;
-}
-
-.card {
+  }
+  
+  .card {
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);
-
-}
-
-.app {
+  }
+  
+  .app {
     background-color: rgba(36, 32, 33, 0.8);
     border: 3px solid var(--primary);
     border-radius: 10px;
@@ -52,84 +79,84 @@ body {
     transition: all linear 0.3s;
     overflow: hidden;
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);
-}
-
-.app img {
+  }
+  
+  .app img {
     transform: scale(1);
     transition: all linear 0.1s;
-}
-
-.app:hover img {
+  }
+  
+  .app:hover img {
     transform: scale(1.1);
-}
-
-a {
+  }
+  
+  a {
     text-decoration: none;
     color: var(--primary);
-}
-
-a:hover {
+  }
+  
+  a:hover {
     color: var(--secondary);
-}
-
-.card {
+  }
+  
+  .card {
     color: var(--primary);
     background-color: var(--terciary);
     border: var(--primary);
-}
-
-footer {
+  }
+  
+  footer {
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);
     font-family: "Arkeo BT W01 Regular";
     background-color: var(--terciary);
     border-top: 5px solid var(--primary);
     color: var(--primary);
-}
-
-h3 {
+  }
+  
+  h3 {
     color: var(--secondary);
-}
-
-.copy {
+  }
+  
+  .copy {
     color: var(--secondary);
-}
-
-i {
-    color:var(--secondary);
-}
-
-/* Medidas Responsive Dispositivo Movil */
-@media (max-width: 768px) {
+  }
+  
+  i {
+    color: var(--secondary);
+  }
+  
+  /* Medidas Responsive Dispositivo Movil */
+  @media (max-width: 768px) {
     main {
-        padding: 10px;
+      padding: 10px;
     }
-
+  
     header img {
-        width: 90% !important;
+      width: 90% !important;
     }
-
+  
     .card {
-        margin: 20px !important;
-        padding: 15px !important;
-        width: 90% !important;
+      margin: 20px !important;
+      padding: 15px !important;
+      width: 90% !important;
     }
-
+  
     section {
-        flex-direction: column !important;
-        gap: 20px !important;
+      flex-direction: column !important;
+      gap: 20px !important;
     }
-
+  
     section .app {
-        width: 100% !important;
+      width: 100% !important;
     }
-
+  
     .footer__content {
-        flex-direction: column !important;
-        text-align: center !important;
+      flex-direction: column !important;
+      text-align: center !important;
     }
-
+  
     .footer__content div {
-        width: 100% !important;
-        margin-bottom: 20px !important;
+      width: 100% !important;
+      margin-bottom: 20px !important;
     }
-}
+  }

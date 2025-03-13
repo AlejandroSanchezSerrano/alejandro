@@ -97,6 +97,10 @@ i {
 
 /* Medidas Responsive Dispositivo Movil */
 @media (max-width: 768px) {
+    main {
+        padding: 10px;
+    }
+
     header img {
         width: 50% !important;
     }

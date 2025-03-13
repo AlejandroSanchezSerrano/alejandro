@@ -85,7 +85,7 @@ main {
     transform: scale(1.05);
 }
 
-.app img {
+a img {
     width: 100%;
 }
 

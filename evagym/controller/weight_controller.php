@@ -41,25 +41,35 @@ if (!isset($data->action)) {
 
 switch ($data->action) {
     case 'create':
-        // Validar campos requeridos
         if (empty($data->weight) || empty($data->id_user)) {
             http_response_code(400);
             echo json_encode(["message" => "Faltan los campos obligatorios: peso o id de usuario."]);
             exit();
         }
-
+    
         $weight->weight = floatval($data->weight);
         $weight->id_user = intval($data->id_user);
         $weight->date = isset($data->date) ? htmlspecialchars(strip_tags($data->date)) : date('Y-m-d H:i:s');
-
+    
         if ($weight->create()) {
-            http_response_code(201);
-            echo json_encode(["message" => "Peso registrado correctamente."]);
+            // Actualizar el peso en la tabla users
+            include_once '../model/user.php';
+            $user = new User($db);
+            $user->id = $weight->id_user;
+            $user->weight = $weight->weight;
+    
+            if ($user->updateWeightOnly()) {
+                http_response_code(201);
+                echo json_encode(["message" => "Peso registrado y usuario actualizado correctamente."]);
+            } else {
+                http_response_code(200); // Se creó el peso, pero falló la actualización del usuario
+                echo json_encode(["message" => "Peso registrado, pero error al actualizar el usuario."]);
+            }
         } else {
             http_response_code(500);
             echo json_encode(["message" => "Error al registrar el peso."]);
         }
-        break;
+        break;    
 
     case 'update':
         if (empty($data->id) || empty($data->weight) || empty($data->date)) {

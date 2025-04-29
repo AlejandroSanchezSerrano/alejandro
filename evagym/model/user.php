@@ -171,5 +171,27 @@ class User {
         return false;
     }
     
+    public function updateWeightOnly() {
+        $query = "UPDATE " . $this->table_name . " SET weight = :weight WHERE id = :id";
+    
+        $stmt = $this->conn->prepare($query);
+    
+        $this->weight = filter_var($this->weight, FILTER_VALIDATE_FLOAT);
+        $this->id = filter_var($this->id, FILTER_VALIDATE_INT);
+    
+        $stmt->bindParam(":weight", $this->weight);
+        $stmt->bindParam(":id", $this->id, PDO::PARAM_INT);
+    
+        try {
+            if ($stmt->execute()) {
+                return true;
+            }
+        } catch (PDOException $e) {
+            error_log("Error actualizando solo el peso: " . $e->getMessage());
+        }
+    
+        return false;
+    }
+    
 }
 ?>

@@ -1,6 +1,5 @@
 // --- CONFIGURACIÓN ---
-// URL donde subiste los PHP (ej: https://tudominio.com/api). Sin barra al final.
-const API_BASE_URL = 'https://188.164.199.21/api'; 
+const API_BASE_URL = 'https://alejandrodev.es/api'; 
 
 const year = 2026;
 let currentMonth = 0; 

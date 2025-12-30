@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ki Control - 2026 Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- VISTA LOGIN -->
+    <div id="loginView" class="login-container">
+        <div class="retro-box">
+            <h1 style="color: #4ade80; font-size: 1.5rem; margin-bottom:5px;">KI CONTROL</h1>
+            <p class="pixel-font" style="font-size: 0.6rem; margin-bottom: 25px; color:#888;">2026 HABIT TRACKER</p>
+            
+            <form id="authForm">
+                <input type="text" name="username" class="retro-input" placeholder="USUARIO" required autocomplete="off">
+                <input type="password" name="password" class="retro-input" placeholder="CONTRASEÑA" required>
+                <!-- Hidden input para controlar login/register -->
+                <input type="hidden" name="action" value="login" id="actionInput">
+                
+                <button type="submit" class="retro-btn" style="background:#4ade80; width:100%;">ENTRAR</button>
+                <button type="button" class="retro-btn" id="toggleAuthMode" style="background:transparent; color:#fff; border-color:#fff; width:100%;">REGISTRARSE</button>
+            </form>
+            <p id="msg" style="margin-top:15px; color: #ff5555; font-size: 0.7rem; font-family:'Inter'"></p>
+        </div>
+    </div>
+
+    <!-- VISTA DASHBOARD (Oculta por defecto) -->
+    <div id="dashboardView" style="display:none; width:100%;">
+        <header class="dashboard-header">
+            <div class="logo">
+                <span class="pixel-font" style="color:var(--text-main); font-size:1.2rem;">KI CONTROL</span>
+            </div>
+            
+            <div class="user-controls desktop-only">
+                <span class="pixel-font" id="usernameDisplay">HOLA, USUARIO</span>
+                <button id="btnLogout" class="retro-btn" style="background:#ff5555;">SALIR</button>
+            </div>
+
+            <button class="mobile-menu-btn mobile-only" onclick="toggleMenu()">☰</button>
+        </header>
+
+        <div id="mobileMenu" class="mobile-menu">
+            <span class="pixel-font" id="usernameDisplayMobile" style="display:block; margin-bottom:20px; color:#fff;">HOLA</span>
+            <button id="btnLogoutMobile" class="retro-btn" style="background:#ff5555; display:block; width:100%;">SALIR</button>
+        </div>
+
+        <div class="progress-section" id="visualProgress"></div>
+
+        <div class="controls-container">
+            <h2 id="monthTitle" class="pixel-font" style="margin:0; color: #fff; font-size: 1.0rem;">CARGANDO...</h2>
+            <button id="btnNewHabit" class="retro-btn" style="background:#fbbf24">+ NUEVO</button>
+        </div>
+
+        <div id="dailyCheckView" class="mobile-only" style="padding:20px;"></div>
+
+        <div class="tracker-container desktop-only">
+            <table class="retro-table" id="habitTable">
+                <thead><tr id="tableHeader"></tr></thead>
+                <tbody id="tableBody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
